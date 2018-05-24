@@ -1,0 +1,12 @@
+[
+  {
+    "minify": {"renameLocals": false, "enabled": true},
+    "outputFileName": "scripts/savory-reference.js",
+    "inputFiles": [
+      "scripts/controller/WelcomeController.js",
+
+      "scripts/_route.js",
+      "scripts/_app.js"
+    ]
+  }
+]

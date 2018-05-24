@@ -1,0 +1,51 @@
+﻿@leftMenu-size: 400px;
+@search-box-height: 30px;
+
+.leftMenu {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: (@leftMenu-size);
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: #fff;
+
+    .search-box {
+        position: absolute;
+        height: (@search-box-height);
+        width: 100%;
+        border: none;
+        outline: none;
+        padding-left: 10px;
+    }
+
+    #jstree_demo_div {
+        margin-top: (@search-box-height);
+    }
+
+    &::-webkit-scrollbar-track-piece {
+        width: 10px;
+        background-color: #dedede;
+    }
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        height: 50px;
+        background: #ababab;
+        cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #ababab;
+        cursor: pointer;
+    }
+}
+
+.rightContent {
+    margin-left: (@leftMenu-size);
+}

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Reference</title>
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" rel="stylesheet" />
+
+    <link href="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet" />
+
+    <link href="https://cdn.bootcss.com/jstree/3.3.5/themes/default/style.min.css" rel="stylesheet" />
+    <link href="https://cdn.bootcss.com/jstree/3.3.5/themes/default-dark/style.min.css" rel="stylesheet" />
+
+    <link href="styles/savory-reference.min.css?v=@DateTime.Now.ToString("yyyyMMddHHmmss")" rel="stylesheet" />
+</head>
+<body ng-app="app">
+
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Reference</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" ui-view></div>
+
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular.js/1.6.4/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular.js/1.6.4/angular-resource.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+
+    <script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script src="https://cdn.bootcss.com/jstree/3.3.5/jstree.min.js"></script>
+    
+
+    <script src="scripts/savory-reference.js?v=@DateTime.Now.ToString("yyyyMMddHHmmss")"></script>
+
+    <script>
+        window.version = '@DateTime.Now.ToString("yyyyMMddHHmmss")';
+    </script>
+
+</body>
+</html>

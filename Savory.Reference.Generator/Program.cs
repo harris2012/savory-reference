@@ -19,29 +19,33 @@ namespace Savory.Reference.Generator
         /// 参数 /csproj:xxx.csproj
         /// </summary>
         /// <param name="args"></param>
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
             try
             {
                 var param = ParamReader.Read(args);
                 if (param == null)
                 {
-                    return;
+                    return -1;
                 }
 
                 var targetFolder = ConfigurationManager.AppSettings["TargetFolder"];
                 if (targetFolder == null)
                 {
                     Console.WriteLine("TargetFolder is not configed in app.config. press any key to exit.");
-                    return;
+                    return -1;
                 }
                 Console.WriteLine("targetFolder = " + targetFolder);
 
                 Run(param, targetFolder);
+
+                return 0;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+
+                return -1;
             }
         }
 

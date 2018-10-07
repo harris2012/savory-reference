@@ -9,18 +9,23 @@ namespace Savory.Reference.Generator
     public class Param
     {
         /// <summary>
-        /// DLL路径
+        /// Savory.Config.Net45\bin\Release
         /// </summary>
-        public string DLLFilePath { get; set; }
+        public string InputFolder { get; set; }
 
         /// <summary>
-        /// 注释xml文件的路径
+        /// Savory.Config
         /// </summary>
-        public string XmlFilePath { get; set; }
+        public string InputName { get; set; }
 
         /// <summary>
-        /// 目标文件位置(相对路径)
+        /// savory-lib\Savory.Config.txt
         /// </summary>
-        public string TargetFilePath { get; set; }
+        public string TargetFile { get; set; }
+
+        /// <summary>
+        /// G:\tmp003
+        /// </summary>
+        public string TargetFolder { get; set; }
     }
 }

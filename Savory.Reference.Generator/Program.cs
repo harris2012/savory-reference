@@ -29,15 +29,7 @@ namespace Savory.Reference.Generator
                     return -1;
                 }
 
-                var targetFolder = ConfigurationManager.AppSettings["TargetFolder"];
-                if (targetFolder == null)
-                {
-                    Console.WriteLine("TargetFolder is not configed in app.config. press any key to exit.");
-                    return -1;
-                }
-                Console.WriteLine("targetFolder = " + targetFolder);
-
-                Run(param, targetFolder);
+                Run(param);
 
                 return 0;
             }
@@ -49,14 +41,14 @@ namespace Savory.Reference.Generator
             }
         }
 
-        private static void Run(Param param, string targetFolder)
+        private static void Run(Param param)
         {
             Console.WriteLine(nameof(Environment.CurrentDirectory) + " = " + Environment.CurrentDirectory);
 
-            Console.WriteLine(nameof(param.DLLFilePath) + " = " + param.DLLFilePath);
-            Console.WriteLine(nameof(param.XmlFilePath) + " = " + param.XmlFilePath);
+            var dllPath = $"{param.InputFolder}\\{param.InputName}.dll";
+            var xmlPath = $"{param.InputFolder}\\{param.InputName}.xml";
 
-            var items = AssemblyLoader.LoadAssembly(param.DLLFilePath, param.XmlFilePath, false);
+            var items = AssemblyLoader.LoadAssembly(dllPath, xmlPath, false);
 
             //namespace
             {
@@ -71,7 +63,7 @@ namespace Savory.Reference.Generator
 
             var content = JsonConvert.SerializeObject(items, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
-            var targetFilePath = Path.Combine(targetFolder, param.TargetFilePath);
+            var targetFilePath = Path.Combine(param.TargetFolder, param.TargetFile);
             FileInfo file = new FileInfo(targetFilePath);
             if (!file.Directory.Exists)
             {
@@ -81,16 +73,6 @@ namespace Savory.Reference.Generator
             File.WriteAllText(targetFilePath, content);
 
             Console.WriteLine("reference runs successfully.");
-        }
-
-        private static string ToFolderPath(string targetFolder, string spaceName)
-        {
-            return Path.Combine(targetFolder, spaceName.Replace(".", "/"));
-        }
-
-        private static string ToValidFileName(string name)
-        {
-            return name.Replace("<", "_").Replace(">", "_");
         }
     }
 }

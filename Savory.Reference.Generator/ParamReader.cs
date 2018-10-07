@@ -29,14 +29,17 @@ namespace Savory.Reference.Generator
 
                 switch (type.ToLower())
                 {
-                    case "/dll":
-                        param.DLLFilePath = value;
+                    case "/from":
+                        param.InputFolder = value;
                         break;
-                    case "/xml":
-                        param.XmlFilePath = value;
+                    case "/name":
+                        param.InputName = value;
                         break;
                     case "/target":
-                        param.TargetFilePath = value;
+                        param.TargetFile = value;
+                        break;
+                    case "/output":
+                        param.TargetFolder = value;
                         break;
                     default:
                         break;

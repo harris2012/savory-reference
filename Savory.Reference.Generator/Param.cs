@@ -26,6 +26,6 @@ namespace Savory.Reference.Generator
         /// <summary>
         /// G:\tmp003
         /// </summary>
-        public string TargetFolder { get; set; }
+        public string TargetFolder { get { return @"D:\HarrisData\HarrisReference"; } }
     }
 }

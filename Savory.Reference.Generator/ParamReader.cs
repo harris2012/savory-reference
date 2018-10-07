@@ -38,9 +38,6 @@ namespace Savory.Reference.Generator
                     case "/target":
                         param.TargetFile = value;
                         break;
-                    case "/output":
-                        param.TargetFolder = value;
-                        break;
                     default:
                         break;
                 }
